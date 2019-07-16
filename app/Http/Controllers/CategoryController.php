@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\category;
+use App\Category;
 use App\service;
 use App\Http\Resources\CategoryResource;
 
