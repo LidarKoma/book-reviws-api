@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user',['middleware' => 'cors' function (Request $request) {
+Route::middleware('auth:api')->get('/user',['middleware' => 'cors', function (Request $request) {
     return $request->user();
 }]);
 // routes/api.php
