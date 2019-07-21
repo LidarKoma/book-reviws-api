@@ -18,17 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 // routes/api.php
 
-Route::apiResource('books', 'BookController')->middleware => 'cors';
-Route::post('books/{book}/ratings', 'RatingController@store')->middleware => 'cors';
+Route::apiResource('books', 'BookController')->middleware('cors');
+Route::post('books/{book}/ratings', 'RatingController@store')->middleware('cors');
 //Route::get('services', 'ServiceController@show');
 //Route::get('service/{id}', 'ServiceController@findById');
-Route::apiResource('categories', 'CategoryController')->middleware => 'cors';
-Route::apiResource('services', 'ServiceController')->middleware => 'cors';
-Route::apiResource('works', 'WorkController')->middleware => 'cors';
+Route::apiResource('categories', 'CategoryController')->middleware('cors');
+Route::apiResource('services', 'ServiceController')->middleware('cors');
+Route::apiResource('works', 'WorkController')->middleware('cors');
 //Route::get('/send/email', 'ServiceController@mail');
 
 
 
-Route::get('work', 'ServiceController@work')->middleware => 'cors';
+Route::get('work', 'ServiceController@work')->middleware('cors');
 
 
