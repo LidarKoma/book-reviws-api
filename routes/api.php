@@ -13,22 +13,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user',['middleware' => 'cors', function (Request $request) {
     return $request->user();
-});
+}]);
 // routes/api.php
 
-Route::apiResource('books', 'BookController');
-Route::post('books/{book}/ratings', 'RatingController@store');
+Route::apiResource('books', 'BookController')->'middleware' => 'cors';
+Route::post('books/{book}/ratings', 'RatingController@store')->'middleware' => 'cors';
 //Route::get('services', 'ServiceController@show');
 //Route::get('service/{id}', 'ServiceController@findById');
-Route::apiResource('categories', 'CategoryController');
-Route::apiResource('services', 'ServiceController');
-Route::apiResource('works', 'WorkController');
+Route::apiResource('categories', 'CategoryController')->'middleware' => 'cors';
+Route::apiResource('services', 'ServiceController')->'middleware' => 'cors';
+Route::apiResource('works', 'WorkController')->'middleware' => 'cors';
 //Route::get('/send/email', 'ServiceController@mail');
 
 
 
-Route::get('work', 'ServiceController@work');
+Route::get('work', 'ServiceController@work')->'middleware' => 'cors';
 
 
